@@ -1,0 +1,19 @@
+{
+    "sunny": "img/sunny.svg",
+    "patchy_rain_possible": "img/patchy_rain.svg",
+    "cloudy": "img/cloudy.svg",
+    "cloudy_night": "img/cloudy.svg",
+    "partly_cloudy": "img/partly_cloudy.svg",
+    "partly_cloudy_night": "img/partly_cloudy_night.svg",
+    "clear_night": "img/clear.svg",
+    "light_rain": "img/rain.svg",
+    "light_rain_night": "img/light_rain_night.svg",
+    "moderate_rain": "img/rain.svg",
+    "moderate_rain_night": "img/light_rain_night.svg",
+    "mist": "img/mist.svg",
+    "mist_night": "img/mist.svg",
+    "heavy_rain": "img/heavy_rain.svg",
+    "heavy_rain_night": "img/heavy_rain.svg",
+    "overcast": "img/cloudy.svg"
+    
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App weather</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCffhtcZzCpacqM1uAQeL00rHMo0A8ieB0&libraries=places"></script>
+    <script defer src="./script.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="weather-app">
+        
+        <div class="search">
+            <input type="text" name="search-location" class="location-input" spellcheck="false" placeholder="Type a location...">
+            <i class="fas fa-search"></i>
+        </div>
+
+
+        <div location class="location">
+    
+        </div>
+
+        <div temperature class="temperature">
+            <div class="text"></div>
+        </div>
+
+        <div class="status"></div>
+        <div class="current_time"></div>
+        <div class="next-days"></div>
+        <div id="chart"></div>
+
+        <div class="others">
+            <div wind class="wind"></div>
+            <div visibility class="visibilty"></div>
+            <div humidity class="humidity"></div>
+            <div altitude class="altitude"></div>
+            <div air-quality class="air-quality"></div>
+        </div>
+
+        <div class="chart-container">
+            <div id="details-chart"></div>
+        </div>
+    </div>
+</body>
+</html>

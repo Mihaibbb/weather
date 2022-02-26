@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+*,
+*::before, 
+*::after 
+{
+    box-sizing: border-box;
+}
+
+body 
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    font-family: "Quicksand", sans-serif;
+    font-weight: normal;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+body.day 
+{    
+    background: linear-gradient(180deg, rgb(21,187,247), rgb(18,102,244));
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+body.night 
+{
+    
+    background: linear-gradient(165deg, rgb(33,73,140), rgb(43, 47, 119));
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.weather-app
+{
+    margin: 3rem auto;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-app .search 
+{
+    width: 400px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.weather-app .search .error-search 
+{
+    color: rgb(223, 0, 48);
+    
+    margin: 1rem 0 0 .75rem;
+    font-size: 26px;
+}
+
+.weather-app .search i
+{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, .7);
+}
+
+.weather-app input 
+{
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    border-radius: 2rem;
+   
+    padding: 1rem;
+    padding-right: 2.5rem;
+    font-family: "Quicksand", sans-serif;
+    font-size: 22px;
+}
+
+.weather-app input::placeholder
+{
+    color: rgba(255, 255, 255, .7);
+}
+
+.weather-app .temperature 
+{
+    font-size: 50px;
+    font-weight: 600;
+   
+}
+
+.weather-app .temperature .text 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-app .temperature .text img 
+{
+    width: 65px;
+    height: auto;
+    margin-left: .5rem;
+    margin-right: 1rem;
+}
+
+.weather-app .temperature .curr-temp
+{
+    margin-top: 4px;
+}
+
+.weather-app .units 
+{
+    font-size: 25px;
+    display: none;
+   
+}
+
+.weather-app .temperature .units span
+{
+    cursor: pointer;
+}
+
+.weather-app .temperature .units span:not(.active)
+{
+    color: rgba(255, 255, 255, .4);
+}
+
+
+.chart-container 
+{
+   
+    max-width: 1701px;
+}
+
+#chart,
+.chart-container 
+{
+    margin: 3rem auto 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .75);
+    border-radius: 8px;
+}
+
+.airquality-chart-container 
+{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+}
+
+#airquality-chart
+{
+    width: 100%;
+    margin: -3rem auto;
+}
+
+.weather-app .location 
+{
+    font-size: 30px;
+}
+
+.weather-app .status
+{
+    font-size: 36px;
+    margin-top: 1rem;
+    
+    font-family: "Open Sans", sans-serif;
+    
+}
+
+.weather-app .current_time
+{
+    margin-top: .5rem;
+    font-size: 32px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .8);
+    font-family: "Quicksand", sans-serif;
+}
+
+.next-days 
+{
+    width: 100%;
+    max-width: 118rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: .3fr .3fr .3fr;
+    grid-gap: 2rem;
+    margin-top: 2rem;
+}
+
+.day-view 
+{
+    background: rgba(0, 0, 0, .7);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    
+    justify-content: space-between;
+    
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+
+    transition: all 200ms ease-in;
+}
+
+.day-view:hover,
+.day-view.highlight
+{
+    background: rgba(0, 0, 0, .8);
+}
+
+.day-view .condition 
+{
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    font-weight: normal;
+}
+
+
+.day-view .temps-container
+{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 2rem;
+}
+
+.day-view .temps-container .min_temp
+{
+  
+}
+
+.day-view .icon-container .icon 
+{
+    width: 65px;
+    height: auto;
+}
+
+.day-view .total-precipitation 
+{
+    position: relative;
+}
+
+.day-view .total-precipitation > div
+{
+    position: absolute;
+    right: 0px;
+}
+
+.weather-app .others 
+{
+    width: 100%;
+    max-width: 1765px;
+    
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    grid-template-columns: repeat(5, .2fr);
+
+    border-radius: 1rem;
+
+    cursor: pointer;
+
+    margin-top: 2rem;
+    padding: 2rem;
+    grid-gap: 2rem;
+}
+
+.weather-app .others div
+{
+    width: 100%;
+    height: 100%;
+    min-height: 64px;
+    
+    display: grid;
+    justify-content: space-between;
+    align-items: start;
+
+    grid-template-columns: auto auto;
+    
+
+    font-size: 22px;
+    padding: .7rem .8rem;
+
+    background: rgba(0, 0, 0, .7);
+    border-radius: 1rem;
+    
+}
+
+.weather-app .others div > div
+{
+    background: transparent;
+    font-size: 22px;
+    font-family: "Quicksand", sans-serif;
+   
+}
+
+.weather-app .others div > div img 
+{
+    width: 50px;
+}
+
+.weather-app .others div > div:nth-child(3)
+
+{
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / -1;
+   
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    font-size: 28px;
+}
+
+.weather-app .others > div i 
+{
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.weather-app .others .detail 
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@media only screen and (max-width: 900px)
+{
+    .next-days 
+    {
+        grid-template-columns: minmax(550px, .75fr);
+    }
+
+}
+
+
+@media only screen and (max-width: 550px)
+{
+    .next-days
+    {
+        grid-template-columns: 1fr;
+    }
+}
